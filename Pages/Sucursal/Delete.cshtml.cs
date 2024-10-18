@@ -33,7 +33,7 @@ namespace WebApp.Pages.Sucursal
             }
             else
             {
-                Sucursales = Sucursales;
+                Sucursales = sucursales;
                 return Page();
             }
         }
@@ -53,7 +53,7 @@ namespace WebApp.Pages.Sucursal
             }
             else
             {
-                Sucursales = Sucursales;
+                Sucursales = sucursales;
                 context.Sucursales.Remove(Sucursales);
                 await context.SaveChangesAsync();
                 return RedirectToPage("./Index");
