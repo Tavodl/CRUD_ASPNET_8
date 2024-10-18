@@ -1,0 +1,35 @@
+﻿@page
+@model WebApp.Pages.Empleado.DetailEmpleado
+@{
+    ViewData["Title"] = "Details Empleado";
+}
+
+<h1>Details</h1>
+<hr/>
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empleados.Nombre)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empleados.CUI)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empleados.CUI)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empleados.SucursalId)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empleados.SucursalId)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Empleados.EmpleadoId" class="btn btn-primary">Edit</a>
+</div>

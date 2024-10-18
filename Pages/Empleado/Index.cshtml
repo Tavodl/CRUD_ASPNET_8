@@ -1,0 +1,34 @@
+﻿@page
+@model WebApp.Pages.Empleado.IndexEmpleado
+@{
+    ViewData["Title"] = "Empleados";
+}
+
+<h1>Empleados List</h1>
+<hr/>
+<a asp-page="Create" class="btn btn-success float-end">Create</a>
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].CUI)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].SucursalId)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var empleado in Model.Empleados)
+        {
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => empleado.Nombre)</td>
+                <td>@Html.DisplayFor(model => empleado.CUI)</td>
+                <td>@Html.DisplayFor(model => empleado.SucursalId)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@empleado.EmpleadoId" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Detail" asp-route-id="@empleado.EmpleadoId"  class="btn btn-success">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@empleado.EmpleadoId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

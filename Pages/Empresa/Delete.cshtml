@@ -1,0 +1,30 @@
+﻿@page
+@model WebApp.Pages.Empresa.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Are you sure that you want to delete this?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empresas.Nombre)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empresas.Nombre)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empresas.Pais)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empresas.Pais)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Empresas.EmpresaId" />
+        <a asp-page="./Index" class="btn btn-primary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

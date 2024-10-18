@@ -1,0 +1,29 @@
+﻿@page
+@model WebApp.Pages.Empresa.DetailModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<hr/>
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empresas.Nombre)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empresas.Nombre)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Empresas.Pais)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Empresas.Pais)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Empresas.EmpresaId" class="btn btn-primary">Edit</a>
+</div>

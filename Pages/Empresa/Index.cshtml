@@ -1,0 +1,34 @@
+﻿@page
+@model WebApp.Pages.Empresa.IndexModel
+@{
+    ViewData["Title"] = "Empresas";
+}
+
+<h1>Empresas List</h1>
+<hr/>
+<a asp-page="Create" class="btn btn-success float-end">Create</a>
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(model => model.Empresas[0].EmpresaId)</th>
+            <th>@Html.DisplayNameFor(model => model.Empresas[0].Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Empresas[0].Pais)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model.Empresas)
+        {
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => book.EmpresaId)</td>
+                <td>@Html.DisplayFor(model => book.Nombre)</td>
+                <td>@Html.DisplayFor(model => book.Pais)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@book.EmpresaId" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Detail" asp-route-id="@book.EmpresaId"  class="btn btn-success">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@book.EmpresaId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

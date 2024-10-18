@@ -1,0 +1,41 @@
+﻿@page
+@model WebApp.Pages.Sucursal.DetailSucursal
+@{
+    ViewData["Title"] = "Details Sucursal";
+}
+
+<h1>Details</h1>
+<hr/>
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Nombre)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Nombre)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Direccion)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Direccion)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Telefono)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Telefono)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.EmpresaId)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.EmpresaId)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Sucursales.SucursalId" class="btn btn-primary">Edit</a>
+</div>

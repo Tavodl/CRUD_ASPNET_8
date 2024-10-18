@@ -1,0 +1,42 @@
+﻿@page
+@model WebApp.Pages.Sucursal.DeleteSucursal
+@{
+    ViewData["Title"] = "Delete Sucursal";
+}
+
+<h3>Are you sure that you want to delete this?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Nombre)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Nombre)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Direccion)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Direccion)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.Telefono)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.Telefono)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Sucursales.EmpresaId)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Sucursales.EmpresaId)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Sucursales.SucursalId" />
+        <a asp-page="./Index" class="btn btn-primary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

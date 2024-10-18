@@ -1,0 +1,38 @@
+﻿@page
+@model WebApp.Pages.Sucursal.IndexSucursal
+@{
+    ViewData["Title"] = "Sucursal";
+}
+
+<h1>Sucursales List</h1>
+<hr/>
+<a asp-page="Create" class="btn btn-success float-end">Create</a>
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(model => model.Sucursales[0].SucursalId)</th>
+            <th>@Html.DisplayNameFor(model => model.Sucursales[0].Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Sucursales[0].Direccion)</th>
+            <th>@Html.DisplayNameFor(model => model.Sucursales[0].Telefono)</th>
+            <th>@Html.DisplayNameFor(model => model.Sucursales[0].EmpresaId)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var sucursal in Model.Sucursales)
+        {
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => sucursal.SucursalId)</td>
+                <td>@Html.DisplayFor(model => sucursal.Nombre)</td>
+                <td>@Html.DisplayFor(model => sucursal.Direccion)</td>
+                <td>@Html.DisplayFor(model => sucursal.Telefono)</td>
+                <td>@Html.DisplayFor(model => sucursal.EmpresaId)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@sucursal.SucursalId" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Detail" asp-route-id="@sucursal.SucursalId"  class="btn btn-success">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@sucursal.SucursalId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+﻿@page
+@model WebApp.Pages.Sucursal.CreateSucursal
+@{
+    ViewData["Title"] = "Create Empleado";
+}
+
+<h1>Create Sucursal</h1>
+<hr/>
+
+<div class="row">
+    <div class="col-6">
+        <form method="post">
+            <div asp-asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Sucursales.Nombre" class="control-label"></label>
+                <input asp-for="Sucursales.Nombre" class="form-control"/>
+                <span asp-validation-for="Sucursales.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sucursales.Direccion" class="control-label"></label>
+                <input asp-for="Sucursales.Direccion" class="form-control" />
+                <span asp-validation-for="Sucursales.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sucursales.Telefono" class="control-label"></label>
+                <input asp-for="Sucursales.Telefono" class="form-control" />
+                <span asp-validation-for="Sucursales.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sucursales.EmpresaId" class="control-label"></label>
+                <input asp-for="Sucursales.EmpresaId" class="form-control" />
+                <span asp-validation-for="Sucursales.EmpresaId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <a asp-page="Index" class="btn btn-danger">Back</a>
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
